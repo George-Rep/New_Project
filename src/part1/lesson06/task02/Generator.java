@@ -226,7 +226,7 @@ private    void mainGenerationWithBreak(int probability,String[] words) throws I
                 randomSentenceWordsCount = 1 + secureRandom.nextInt(15);
                 sentence[0].setWords(new ArrayList<>(randomSentenceWordsCount));
                 randomDictWordPos = -1;
-                if ((probability == 1) || (secureRandom.nextFloat() > 1.0 / probability)) {
+                if ((probability == 1) || (secureRandom.nextFloat() < 1.0 / probability)) {
                     randomDictWordPos = secureRandom.nextInt(randomSentenceWordsCount);
                 }
                 for (int i = 0; i < randomSentenceWordsCount; i++) {
@@ -302,11 +302,11 @@ private    void generation120(int probability, String[] words) throws IOExceptio
             charactersRemaining -= 4;
         }
 
-        if ((probability == 1) || (secureRandom.nextFloat() > 1.0 / probability)) {
+        if ((probability == 1) || (secureRandom.nextFloat() < 1.0 / probability)) {
             wordFromSentence[0] = new Word(words, secureRandom);
         } else wordFromSentence[0] = new Word(this,  15, true);
 
-        if ((probability == 1) || (secureRandom.nextFloat() > 1.0 / probability)) {
+        if ((probability == 1) || (secureRandom.nextFloat() < 1.0 / probability)) {
             wordFromSentence[1] = new Word(words, secureRandom);
         } else wordFromSentence[1] = new Word(this, 15, true);
 
@@ -418,7 +418,7 @@ private    void generation120(int probability, String[] words) throws IOExceptio
 
                     } else if (size < 120) {
                         charactersRemaining = size - 3;
-                        if ((probability == 1) || (secureRandom.nextFloat() > 1.0 / probability)) {
+                        if ((probability == 1) || (secureRandom.nextFloat() < 1.0 / probability)) {
                             wordFromSentence[0] = new Word(words, secureRandom);
                         } else wordFromSentence[0] = new Word(this,  15, true);
 
