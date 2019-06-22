@@ -1,1 +1,4 @@
 
+[submodule "New-Project-submodule"]
+	path = New-Project-submodule
+	url = https://github.com/George-Rep/New-Project-submodule
