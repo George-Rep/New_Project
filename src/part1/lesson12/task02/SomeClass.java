@@ -1,8 +1,10 @@
 package part1.lesson12.task02;
 
 /**
- * Любой класс. Будет использован для множественной загрузки.
- *
+ * Класс для множественной загрузки.
  */
 public class SomeClass {
+    public static int  method(int i) {
+        return i*5;
+    }
 }

@@ -3,6 +3,8 @@ package part1.lesson12.task02;
 import java.util.ArrayList;
 import java.util.List;
 
+import static part1.lesson12.task02.SomeClass.*;
+
 /**
  * рекомендуется например -XX:MaxMetaspaceSize=128m
  * Задание 2.  Доработать программу так, чтобы ошибка OutOfMemoryError возникала в Metaspace /Permanent Generation
@@ -15,6 +17,11 @@ public class Main2 {
      * в цикле запускаем метод loadMyClass().
      */
     public static void main(String[] args) {
+//try {
+        method(5);
+//} catch (Exception e)
+//{ System.out.println("Необходимо перекомпилировать SomeClass.java. (меню Build) ");}
+
         Main2 classGenerator = new Main2();
         System.out.println("Старт");
         while (true) {
