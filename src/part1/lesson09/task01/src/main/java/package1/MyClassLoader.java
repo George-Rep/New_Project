@@ -1,4 +1,4 @@
-package part1.lesson09.task01;
+package package1;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,20 +20,20 @@ public class MyClassLoader extends ClassLoader {
         this.pathToClass = pathToClass;
     }
 
-/*    @Override
-    public Class<?> loadClass(String name) throws ClassNotFoundException {
-        if ("part1.lesson09.task01.SomeClass".equals(name)) {
-            return findClass(name);
-        }
-        return super.loadClass(name);
-    }*/
+//    @Override
+//    public Class<?> loadClass(String name) throws ClassNotFoundException {
+//        if ("part1.lesson09.task01.SomeClass".equals(name)) {
+//           return findClass(name);
+//       }
+//        return super.loadClass(name);
+//    }
 
     /**
-     * инстанцируем класс part1.lesson09.task01.SomeClass, байт-код читается из файла .class
+     * инстанцируем класс package1.SomeClass, байт-код читается из файла .class
      */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-        if ("part1.lesson09.task01.SomeClass".equals(name)) {
+        if (Main.getResourceBundleString("className").equals(name)) {
             try {
                 byte[] bytes = Files.readAllBytes(Paths.get(pathToClass));
                 return defineClass(name, bytes, 0, bytes.length);
